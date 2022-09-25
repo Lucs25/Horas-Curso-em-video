@@ -2,33 +2,24 @@
 function carregar() {
     var msg = window.document.getElementById('msg')
     var img = window.document.getElementById("img")
-    var data = new Date()
-    var hora = data.getHours()
-    //var hora = 23
-    msg.innerHTML = `Agora são ${hora} horas.`
+
+    function addZero(i) {
+        if (i < 10) {i = "0" + i}
+        return i;
+    }
+    const data = new Date()
+    let hora = 20//addZero(data.getHours());
+    let m = addZero(data.getMinutes());
+    msg.innerHTML = `Agora são ${hora}:${m} minutos`
     if (hora >= 0 && hora < 12) {
-        img.src = "manhã.png"
+        img.src = "/img/manhã.png"
         document.body.style.background = '#e2cd9f'
     } else if (hora >=12 && hora <= 18 ) {
-        img.src = "tarde.png"
+        img.src = "/img/tarde.png"
         document.body.style.background = '#b9846f'
     }
     else {
-        img.src = "noite.png"
-        document.body.style.background = '#515154'
+        img.src = "/img/noite.png"
+        document.body.style.background = '#8B9DC3'
     }
 }
-/*
-function saudacoes() {
-    var sau = window.document.getElementById('sau')
-    var data = new Date()
-    var hora = data.getHours()
-    p.innerText =<p>${hora}</p>.
-        if (hora >= 0 && hora < 12) {
-            "Bom dia"
-        } else if (hora >=12 && hora <= 18 ) {
-            "Bom dia"
-        } else {
-            "Bom dia"
-        }
-    } */
