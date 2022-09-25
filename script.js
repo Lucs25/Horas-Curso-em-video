@@ -8,7 +8,7 @@ function carregar() {
         return i;
     }
     const data = new Date()
-    let hora = 20//addZero(data.getHours());
+    let hora = addZero(data.getHours());
     let m = addZero(data.getMinutes());
     msg.innerHTML = `Agora são ${hora}:${m} minutos`
     if (hora >= 0 && hora < 12) {
